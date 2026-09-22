@@ -1,0 +1,1458 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Для моей принцесски ❤️</title>
+<meta name="description" content="Открытка на день рождения с тёплыми словами.">
+<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+<style>html,body,#root{margin:0;min-height:100%;} body{margin:0;}
+/* ==========================================================================
+   Birthday card page ("Открытка")
+   Soft pink paper with a painted floral vine wrapping every frame.
+   ========================================================================== */
+
+.card-page {
+  color: #632d49;
+  font-family: Comfortaa, cursive;
+  background: linear-gradient(135deg, #ffd9e7, #f8b8d1, #ffddea);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.card-page:before {
+  content: "♡  🦋  ♡  🦋  ♡  🦋  ♡";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  color: #ffffff88;
+  font-size: 25px;
+  line-height: 4;
+  letter-spacing: 25px;
+  z-index: 0;
+}
+
+.card-page .wrap {
+  width: min(940px, 88%);
+  margin: auto;
+  position: relative;
+  z-index: 1;
+  padding-top: 26px;
+}
+
+.card-page .box {
+  position: relative;
+  background: transparent;
+  border: 0;
+  border-radius: 30px;
+  padding: 46px 46px;
+  margin: 50px 0;
+  box-shadow:
+    0 12px 35px #85315333,
+    0 0 40px #ff8fc0aa,
+    0 0 70px #f58fb966,
+    inset 0 0 40px #ffc2dd80;
+}
+
+.card-page .box::before,
+.card-page .card::before,
+.card-page .mood::before,
+.card-page .mcard::before,
+.card-page .rubric-btn::before {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  border-radius: inherit;
+  background: #fffafdc9;
+  z-index: 0;
+}
+
+.card-page .box > :not(.vine-layer),
+.card-page .card > :not(.vine-layer),
+.card-page .mood > :not(.vine-layer),
+.card-page .mcard > :not(.vine-layer),
+.card-page .rubric-btn > :not(.vine-layer) {
+  position: relative;
+  z-index: 1;
+}
+
+.card-page h1,
+.card-page .title {
+  font-family: Pacifico, cursive;
+  font-weight: 400;
+  color: #9d416d;
+  text-align: center;
+}
+
+.card-page h1 {
+  font-size: clamp(30px, 7vw, 56px);
+  line-height: 1.3;
+  text-shadow: 0 2px #fff;
+  margin: 0 0 26px;
+}
+
+.card-page .lead {
+  white-space: pre-line;
+  line-height: 1.85;
+  font-size: 16px;
+}
+
+.card-page .title {
+  font-size: clamp(27px, 6vw, 42px);
+  margin: 60px 0 34px;
+}
+
+.card-page .photos,
+.card-page .moods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 46px 40px;
+}
+
+.card-page .card {
+  position: relative;
+  background: transparent;
+  border: 0;
+  border-radius: 24px;
+  padding: 18px;
+  box-shadow:
+    0 8px 24px #782d4d30,
+    0 0 26px #ff8fc0aa,
+    0 0 48px #f58fb955;
+  animation: photo-card-breathe 9s ease-in-out infinite;
+  transform-origin: center;
+  transition: box-shadow 0.3s ease;
+}
+
+@keyframes photo-card-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.018);
+  }
+}
+
+.card-page .card:nth-child(even) {
+  animation-delay: -4.5s;
+}
+
+.card-page .card:hover {
+  box-shadow:
+    0 10px 28px #782d4d38,
+    0 0 40px #f56ba396,
+    0 0 70px #f58fb977;
+}
+
+.card-page .photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 17px;
+}
+
+.card-page .caption {
+  line-height: 1.7;
+  font-size: 14px;
+  padding: 12px 3px 5px;
+}
+
+.card-page .intro {
+  text-align: center;
+  line-height: 1.8;
+}
+
+.card-page .moods {
+  margin-top: 42px;
+}
+
+@keyframes mood-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 8px 20px #782d4d2b,
+      0 0 30px #ff7fb8aa,
+      0 0 55px #f58fb966,
+      inset 0 0 30px #ffbad680;
+  }
+  50% {
+    box-shadow:
+      0 8px 22px #782d4d33,
+      0 0 48px #ff5aa2c4,
+      0 0 85px #f56ba388,
+      inset 0 0 38px #ffa8ce99;
+  }
+}
+
+.card-page .mood {
+  position: relative;
+  border: 0;
+  border-radius: 24px;
+  background: transparent;
+  color: #71334f;
+  padding: 30px 30px;
+  font: 600 15px Comfortaa, cursive;
+  cursor: pointer;
+  box-shadow:
+    0 8px 20px #782d4d2b,
+    0 0 30px #ff7fb8aa,
+    0 0 55px #f58fb966,
+    inset 0 0 30px #ffbad680;
+  animation: mood-glow 3.6s ease-in-out infinite;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  min-height: 176px;
+  overflow: visible;
+}
+
+/* чередование: розовая — белая — розовая... */
+.card-page .mood:nth-child(odd) {
+  animation-delay: -1.8s;
+}
+
+.card-page .mood:nth-child(odd)::before {
+  background: linear-gradient(135deg, #fbc9dd, #f7a8c8);
+}
+
+.card-page .mood:hover {
+  transform: translateY(-2px);
+  animation-play-state: paused;
+  box-shadow:
+    0 10px 24px #782d4d38,
+    0 0 55px #ff4d9bd6,
+    0 0 90px #f56ba388,
+    inset 0 0 40px #ff9cc8aa;
+}
+
+.card-page .mood:active {
+  transform: translateY(1px) scale(0.97);
+}
+
+.butterfly-flight {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.butterfly {
+  position: absolute;
+  left: -14px;
+  top: -11px;
+  display: block;
+  width: 28px;
+  height: 22px;
+  filter: drop-shadow(0 2px 2px #49253f73);
+  perspective: 80px;
+  transform: translate(var(--end-x), var(--end-y)) rotate(var(--turn)) scale(var(--size));
+}
+
+.butterfly-body {
+  position: absolute;
+  inset: 0;
+  transform: rotate(-9deg);
+  transform-style: preserve-3d;
+}
+
+.butterfly-thorax {
+  position: absolute;
+  left: 11px;
+  top: 3px;
+  width: 3px;
+  height: 16px;
+  border-radius: 55% 55% 45% 45%;
+  background: linear-gradient(90deg, #301d22, #6c4939 48%, #21171c);
+  box-shadow: 0 -2px 0 0 #24171a;
+  z-index: 3;
+}
+
+.butterfly-wing {
+  position: absolute;
+  top: 1px;
+  width: 14px;
+  height: 18px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 65% 24%, #fff4cb 0 7%, #4b293d 8% 12%, transparent 13%),
+    radial-gradient(ellipse at 34% 72%, #fbe3a3 0 8%, #64324e 9% 14%, transparent 15%),
+    repeating-radial-gradient(ellipse at 100% 55%, transparent 0 5px, #4c2b3b55 6px 7px),
+    linear-gradient(145deg, #f8c45c 4%, #df714d 48%, #7b385d 100%);
+  border: 1px solid #4a2938;
+  box-shadow: inset 0 0 0 1px #f8d38173;
+  z-index: 2;
+  backface-visibility: visible;
+}
+
+.butterfly-wing--left {
+  right: 14px;
+  border-radius: 90% 32% 72% 38%;
+  transform-origin: right center;
+  animation: butterfly-left-wing 0.11s ease-in-out infinite alternate;
+}
+
+.butterfly-wing--right {
+  left: 14px;
+  border-radius: 32% 90% 38% 72%;
+  transform-origin: left center;
+  animation: butterfly-right-wing 0.11s ease-in-out infinite alternate;
+}
+
+.butterfly-spot {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  background: #64324e;
+  opacity: 0.72;
+}
+
+.butterfly-spot--upper {
+  width: 4px;
+  height: 5px;
+  top: 3px;
+  left: 4px;
+}
+
+.butterfly-spot--lower {
+  width: 3px;
+  height: 3px;
+  right: 2px;
+  bottom: 3px;
+  background: #f9db8c;
+}
+
+.butterfly-antenna {
+  position: absolute;
+  top: -4px;
+  left: 12px;
+  width: 1px;
+  height: 8px;
+  border-left: 1px solid #3b242a;
+  border-radius: 50%;
+  transform-origin: bottom;
+  z-index: 4;
+}
+
+.butterfly-antenna--left { transform: rotate(-28deg); }
+.butterfly-antenna--right { transform: rotate(28deg); }
+
+@keyframes butterfly-left-wing {
+  from { transform: rotateY(12deg) rotateZ(-7deg); }
+  to { transform: rotateY(72deg) rotateZ(5deg); }
+}
+
+@keyframes butterfly-right-wing {
+  from { transform: rotateY(-12deg) rotateZ(7deg); }
+  to { transform: rotateY(-72deg) rotateZ(-5deg); }
+}
+
+.butterfly:nth-child(3n + 2) .butterfly-wing {
+  background:
+    radial-gradient(circle at 66% 27%, #fff6d6 0 8%, transparent 9%),
+    radial-gradient(circle at 36% 70%, #fff0bf 0 7%, transparent 8%),
+    linear-gradient(145deg, #f5d768 8%, #d68755 55%, #775472 100%);
+}
+
+.butterfly:nth-child(3n) .butterfly-wing {
+  background:
+    radial-gradient(circle at 66% 27%, #fff1d0 0 8%, transparent 9%),
+    radial-gradient(circle at 36% 70%, #f9dfc0 0 7%, transparent 8%),
+    linear-gradient(145deg, #eaa984 8%, #b55773 54%, #633852 100%);
+}
+
+.butterfly-flight--arriving .butterfly {
+  animation: butterfly-arrive 1.25s cubic-bezier(0.3, 0.05, 0.2, 1) var(--delay) both;
+}
+
+.butterfly-flight--resting .butterfly {
+  transform: translate(var(--end-x), var(--end-y)) rotate(var(--turn)) scale(var(--size));
+}
+
+.butterfly-flight--leaving .butterfly {
+  animation: butterfly-leave 1.25s cubic-bezier(0.55, 0, 0.75, 0.35) calc(var(--delay) / 3) both;
+}
+
+@keyframes butterfly-arrive {
+  0% {
+    opacity: 0;
+    transform: translate(var(--start-x), var(--start-y)) rotate(0) scale(0.15);
+  }
+  8% { opacity: 1; }
+  100% { opacity: 1; transform: translate(var(--end-x), var(--end-y)) rotate(var(--turn)) scale(var(--size)); }
+}
+
+@keyframes butterfly-leave {
+  0% { opacity: 1; transform: translate(var(--end-x), var(--end-y)) rotate(var(--turn)) scale(var(--size)); }
+  88% { opacity: 1; }
+  100% { opacity: 0; transform: translate(var(--start-x), var(--start-y)) rotate(8deg) scale(0.12); }
+}
+
+.card-page .mood-label {
+  position: relative;
+  z-index: 1;
+}
+
+.card-page .mphoto {
+  display: block;
+  width: min(420px, 88%);
+  height: auto;
+  margin: 0 auto 22px;
+  border-radius: 22px;
+  border: 5px solid #fff;
+  box-shadow: 0 10px 26px #782d4d33;
+}
+
+.card-page .modal {
+  position: fixed;
+  inset: 0;
+  background: #41192d99;
+  backdrop-filter: blur(5px);
+  align-items: center;
+  justify-content: center;
+  padding: 34px 26px;
+  z-index: 5;
+  display: none;
+  overflow-y: auto;
+}
+
+.card-page .modal.open {
+  display: flex;
+  animation: modal-backdrop-in 0.24s ease-out both;
+}
+
+.card-page .modal--closing {
+  animation: modal-backdrop-out 0.9s ease-in both;
+}
+
+.card-page .modal--closing .mcard {
+  animation: mood-window-close 0.9s ease-in both;
+}
+
+@keyframes modal-backdrop-out {
+  0%, 64% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes mood-window-close {
+  0%, 58% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(12px) scale(0.96); }
+}
+
+@keyframes modal-backdrop-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modal-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 25px 70px #280c1c66,
+      0 0 48px #ff7fb8b3,
+      0 0 85px #f58fb966;
+  }
+  50% {
+    box-shadow:
+      0 25px 70px #280c1c66,
+      0 0 70px #ff5aa2c4,
+      0 0 110px #f58fb977;
+  }
+}
+
+.card-page .mcard {
+  position: relative;
+  width: min(650px, 100%);
+  margin: auto;
+  overflow: visible;
+  background: transparent;
+  border: 0;
+  border-radius: 30px;
+  padding: 42px 40px;
+  box-shadow:
+    0 25px 70px #280c1c66,
+    0 0 48px #ff7fb8b3,
+    0 0 85px #f58fb966;
+  animation:
+    mood-window-open 0.32s cubic-bezier(0.2, 0.84, 0.32, 1) both,
+    modal-glow 3.6s ease-in-out 0.32s infinite;
+}
+
+@keyframes mood-window-open {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .butterfly-flight {
+    display: none;
+  }
+
+  .card-page .mood--bursting,
+  .card-page .modal.open,
+  .card-page .mcard {
+    animation: none;
+  }
+}
+
+.card-page .mcard::before {
+  background: #fff8fc;
+}
+
+.card-page .close {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: #f5c1d7;
+  color: #73334f;
+  font-size: 25px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.card-page .mtitle {
+  font: 400 29px Pacifico, cursive;
+  text-align: center;
+  color: #9d416d;
+  margin: 8px 40px 20px;
+}
+
+.card-page .mtext {
+  white-space: pre-line;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.card-page footer {
+  height: 70px;
+}
+
+/* --- floral vine overlay --- */
+.vine-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  filter: drop-shadow(0 2px 2px #6f2c4a22);
+}
+
+.vine-rose {
+  position: absolute;
+}
+
+.vine-rose--tl {
+  left: -26px;
+  top: -26px;
+}
+
+.vine-rose--tr {
+  right: -26px;
+  top: -26px;
+}
+
+.vine-rose--br {
+  right: -26px;
+  bottom: -26px;
+}
+
+.vine-rose--bl {
+  left: -26px;
+  bottom: -26px;
+}
+
+.card-page .card .vine-rose,
+.card-page .mood .vine-rose {
+  --o: -18px;
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
+}
+
+.card-page .card .vine-rose--tl,
+.card-page .mood .vine-rose--tl {
+  left: var(--o);
+  top: var(--o);
+}
+
+.card-page .card .vine-rose--tr,
+.card-page .mood .vine-rose--tr {
+  right: var(--o);
+  top: var(--o);
+}
+
+.card-page .card .vine-rose--br,
+.card-page .mood .vine-rose--br {
+  right: var(--o);
+  bottom: var(--o);
+}
+
+.card-page .card .vine-rose--bl,
+.card-page .mood .vine-rose--bl {
+  left: var(--o);
+  bottom: var(--o);
+}
+
+@media (max-width: 600px) {
+  .card-page .box {
+    padding: 34px 22px;
+  }
+  .card-page .lead {
+    font-size: 15px;
+  }
+  .card-page .photos,
+  .card-page .moods {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-page .card {
+    animation: none;
+  }
+}
+
+/* ==========================================================================
+   Rubric navigation: two big buttons on the home screen + rubric pages
+   ========================================================================== */
+
+.card-page .rubric-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+  margin: 54px 0 6px;
+}
+
+.card-page .rubric-btn {
+  position: relative;
+  border: 0;
+  border-radius: 24px;
+  background: transparent;
+  color: #71334f;
+  padding: 40px 28px;
+  font: 400 22px Pacifico, cursive;
+  cursor: pointer;
+  min-height: 140px;
+  overflow: visible;
+  box-shadow:
+    0 8px 20px #782d4d2b,
+    0 0 30px #ff7fb8aa,
+    0 0 55px #f58fb966,
+    inset 0 0 30px #ffbad680;
+  animation: mood-glow 3.6s ease-in-out infinite;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.card-page .rubric-btn:nth-child(even) {
+  animation-delay: -1.8s;
+}
+
+.card-page .rubric-btn:nth-child(even)::before {
+  background: linear-gradient(135deg, #fbc9dd, #f7a8c8);
+}
+
+.card-page .rubric-btn:hover {
+  transform: translateY(-3px);
+  animation-play-state: paused;
+  box-shadow:
+    0 12px 26px #782d4d38,
+    0 0 55px #ff4d9bd6,
+    0 0 90px #f56ba388,
+    inset 0 0 40px #ff9cc8aa;
+}
+
+.card-page .rubric-btn:active {
+  transform: translateY(1px) scale(0.97);
+}
+
+.card-page .rubric-btn-label {
+  position: relative;
+  z-index: 1;
+  display: block;
+  line-height: 1.4;
+}
+
+/* --- "Маленький секрет сайта": full-screen fade message --- */
+
+.card-page .secret-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 45%, #41192de6, #2a0f1f);
+  backdrop-filter: blur(3px);
+  animation: secret-overlay-in 0.6s ease-out both;
+}
+
+.card-page .secret-overlay--out {
+  animation: secret-overlay-out 0.9s ease-in both;
+}
+
+.card-page .secret-text {
+  font-family: Pacifico, cursive;
+  font-weight: 400;
+  font-size: clamp(30px, 9vw, 64px);
+  line-height: 1.3;
+  color: #ffe3ef;
+  text-align: center;
+  padding: 0 24px;
+  text-shadow: 0 0 18px #ff7fb8cc, 0 0 40px #f58fb988;
+  animation: secret-text-in 0.6s ease-out both;
+}
+
+.card-page .secret-overlay--out .secret-text {
+  animation: secret-text-out 0.9s ease-in both;
+}
+
+@keyframes secret-overlay-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes secret-overlay-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes secret-text-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes secret-text-out {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(1.05); }
+}
+
+/* --- rubric page wrapper with close cross at the very top --- */
+
+.card-page .rubric {
+  animation: rubric-in 0.42s ease both;
+}
+
+@keyframes rubric-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+.card-page .rubric-topbar {
+  position: sticky;
+  top: 12px;
+  z-index: 6;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 8px;
+}
+
+.card-page .rubric-close {
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  background: #f5c1d7;
+  color: #73334f;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow:
+    0 6px 18px #782d4d40,
+    0 0 24px #ff8fc0aa,
+    inset 0 0 14px #ffbad680;
+  transition: transform 0.25s ease, box-shadow 0.3s ease, background 0.3s ease;
+  display: grid;
+  place-items: center;
+}
+
+.card-page .rubric-close:hover {
+  transform: rotate(90deg) scale(1.06);
+  background: #f7a8c8;
+  box-shadow:
+    0 8px 22px #782d4d4d,
+    0 0 38px #ff4d9bd6,
+    inset 0 0 18px #ffa8ce99;
+}
+
+.card-page .rubric-close:active {
+  transform: scale(0.92);
+}
+
+.card-page .rubric-close-cross {
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+}
+
+.card-page .rubric-close-cross::before,
+.card-page .rubric-close-cross::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 0;
+  width: 2px;
+  height: 16px;
+  background: currentColor;
+  border-radius: 2px;
+}
+
+.card-page .rubric-close-cross::before {
+  transform: rotate(45deg);
+}
+
+.card-page .rubric-close-cross::after {
+  transform: rotate(-45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-page .rubric,
+  .card-page .rubric-btn,
+  .card-page .rubric-close {
+    animation: none;
+    transition: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .card-page .rubric-nav {
+    grid-template-columns: 1fr;
+  }
+  .card-page .rubric-btn {
+    font-size: 19px;
+    padding: 32px 22px;
+    min-height: 116px;
+  }
+}
+/* A tiny bird that lives on the page itself — scrolling never moves it. */
+.card-page .floating-pink-bird {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 72px;
+  height: 72px;
+  z-index: 40;
+  padding: 17px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+  filter: drop-shadow(0 4px 5px rgba(151, 55, 99, .22));
+  transform: translate3d(var(--bird-x), var(--bird-y), 0);
+  transition: transform var(--bird-duration) cubic-bezier(.45, .08, .35, 1);
+  will-change: transform;
+}
+.card-page .floating-pink-bird:hover,
+.card-page .floating-pink-bird:focus-visible {
+  outline: none;
+  filter: drop-shadow(0 4px 7px rgba(151, 55, 99, .38)) drop-shadow(0 0 12px #ff5aa2);
+}
+.card-page .floating-pink-bird:focus-visible {
+  box-shadow: 0 0 0 3px #fff8fc, 0 0 0 6px #b84279;
+}
+.card-page .floating-pink-bird:active .floating-pink-bird-bob {
+  transform: scale(.86);
+}
+.card-page .floating-pink-bird-bob {
+  display: block;
+  width: 100%;
+  height: 100%;
+  animation: pink-bird-bob 1.1s ease-in-out infinite alternate;
+  will-change: transform;
+}
+.card-page .floating-pink-bird-inner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(var(--bird-facing)) rotate(var(--bird-tilt, 0deg));
+  transition: transform .6s ease;
+}
+.card-page .floating-pink-bird-wing {
+  transform-box: fill-box;
+  transform-origin: 85% 80%;
+  animation: pink-bird-flap .46s ease-in-out infinite alternate;
+}
+.card-page .floating-pink-bird-tail {
+  transform-box: fill-box;
+  transform-origin: left center;
+  animation: pink-bird-tail .9s ease-in-out infinite alternate;
+}
+@keyframes pink-bird-flap {
+  from { transform: rotate(-8deg) scaleY(.78); }
+  to { transform: rotate(10deg) scaleY(1.08); }
+}
+@keyframes pink-bird-tail {
+  from { transform: rotate(-4deg); }
+  to { transform: rotate(5deg); }
+}
+@keyframes pink-bird-bob {
+  0% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-7px) rotate(2deg); }
+  100% { transform: translateY(3px) rotate(-2deg); }
+}
+@media (max-width: 680px) {
+  .card-page .floating-pink-bird { width: 68px; height: 68px; padding: 15px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-page .floating-pink-bird { transition-duration: 8s; }
+  .card-page .floating-pink-bird-bob,
+  .card-page .floating-pink-bird-wing,
+  .card-page .floating-pink-bird-tail { animation: none; }
+}
+
+/* The bird's hidden birthday note and its opening fireworks. */
+.card-page .bird-note-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 34px 24px;
+  background: #41192dad;
+  backdrop-filter: blur(7px);
+  animation: bird-note-backdrop .34s ease-out both;
+}
+.card-page .bird-note-card {
+  position: relative;
+  width: min(640px, 100%);
+  padding: 54px 48px 48px;
+  border-radius: 30px;
+  background: transparent;
+  box-shadow: 0 25px 75px #280c1c80, 0 0 55px #ff65aac7, 0 0 110px #ffd15c8f;
+  animation: bird-note-open .7s cubic-bezier(.18,.88,.24,1.16) both, bird-note-glow 2.2s ease-in-out .7s infinite;
+}
+.card-page .bird-note-card::before {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  z-index: 0;
+  border-radius: inherit;
+  background: linear-gradient(145deg, #fffafd, #ffe5f0);
+}
+.card-page .bird-note-card > :not(.vine-layer):not(.fireworks) {
+  position: relative;
+  z-index: 2;
+}
+.card-page .bird-note-title {
+  margin: 0 22px 24px;
+  color: #9d416d;
+  font: 400 clamp(30px, 7vw, 46px)/1.25 Pacifico, cursive;
+  text-align: center;
+  text-shadow: 0 2px #fff;
+}
+.card-page .bird-note-text {
+  margin: 0;
+  color: #632d49;
+  font: 400 clamp(16px, 3.8vw, 20px)/1.85 Pacifico, cursive;
+  text-align: center;
+}
+.card-page .bird-note-close {
+  position: absolute !important;
+  top: 16px;
+  right: 16px;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #f9bed6;
+  color: #793451;
+  font: 400 34px/1 Comfortaa, cursive;
+  cursor: pointer;
+  box-shadow: 0 7px 20px #782d4d42, 0 0 24px #ff63a6a6;
+  transition: transform .22s ease, background .22s ease;
+}
+.card-page .bird-note-close:hover,
+.card-page .bird-note-close:focus-visible {
+  outline: none;
+  transform: rotate(90deg) scale(1.08);
+  background: #f391ba;
+}
+.card-page .fireworks {
+  position: absolute;
+  inset: -70px;
+  z-index: 1;
+  pointer-events: none;
+  overflow: visible;
+}
+.card-page .firework {
+  position: absolute;
+  left: var(--fx);
+  top: var(--fy);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--fc);
+  box-shadow: 0 0 12px var(--fc);
+  opacity: 0;
+  animation: firework-spark 1.35s cubic-bezier(.16,.72,.35,1) var(--fd) infinite both;
+}
+@keyframes firework-spark {
+  0% { opacity: 0; transform: translate(0,0) scale(.2); }
+  12% { opacity: 1; }
+  72% { opacity: 1; transform: translate(var(--tx),var(--ty)) scale(1); }
+  100% { opacity: 0; transform: translate(var(--tx),calc(var(--ty) + 20px)) scale(.2); }
+}
+@keyframes bird-note-backdrop { from { opacity: 0; } to { opacity: 1; } }
+@keyframes bird-note-open {
+  0% { opacity: 0; transform: translateY(28px) scale(.72) rotate(-2deg); }
+  65% { opacity: 1; transform: translateY(-5px) scale(1.035) rotate(.5deg); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes bird-note-glow {
+  50% { box-shadow: 0 25px 75px #280c1c80, 0 0 75px #ff4d9be0, 0 0 135px #ffd34fa8; }
+}
+@media (max-width: 600px) {
+  .card-page .bird-note-modal { padding: 28px 18px; }
+  .card-page .bird-note-card { padding: 58px 28px 38px; }
+  .card-page .bird-note-title { margin-inline: 12px; }
+  .card-page .fireworks { inset: -35px; overflow: hidden; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-page .fireworks { display: none; }
+  .card-page .bird-note-modal,
+  .card-page .bird-note-card { animation: none; }
+}
+</style>
+<script crossorigin src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script>
+const { useEffect, useLayoutEffect, useRef, useState } = React;
+/**
+ * Hand-drawn floral vine that wraps a frame.
+ *
+ * Edges use a repeating SVG tile (a curving stem with leaves and small
+ * blossoms) so the vine stays continuous and never stretches. Corners get
+ * larger, layered rose clusters so the vine reads as a real plant growing
+ * around the frame instead of a decorative emoji.
+ */
+const STEM = "#5f8a4e";
+const STEM_DARK = "#3f6435";
+const LEAF_A = "#6fa055";
+const LEAF_B = "#8cbb6a";
+const PETAL_A = "#f6a8c5";
+const PETAL_B = "#e2739c";
+const PETAL_C = "#fdd9e6";
+const CORE = "#f6c96a";
+const leaf = (x, y, r, s, fill) => `<path d="M0 0 C6 -7 16 -9 22 -4 C16 4 6 6 0 0 Z" fill="${fill}" stroke="${STEM_DARK}" stroke-width="0.7" stroke-opacity=".45" transform="translate(${x} ${y}) rotate(${r}) scale(${s})"/>`;
+const blossom = (x, y, s, r) => {
+    let petals = "";
+    for (let i = 0; i < 5; i++) {
+        petals += `<ellipse cx="0" cy="-5.6" rx="3.5" ry="5.4" fill="${i % 2 ? PETAL_A : PETAL_B}" transform="rotate(${i * 72})"/>`;
+    }
+    return `<g transform="translate(${x} ${y}) rotate(${r}) scale(${s})">${petals}<circle r="2.3" fill="${CORE}"/></g>`;
+};
+/** One horizontal repeat of the vine: 160 x 34 user units. */
+const tileBody = `
+<path d="M0 22 C14 6 32 6 44 20 C56 33 74 33 86 19 C98 5 116 5 128 19 C138 30 152 31 160 22"
+  fill="none" stroke="${STEM}" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M0 22 C14 6 32 6 44 20 C56 33 74 33 86 19 C98 5 116 5 128 19 C138 30 152 31 160 22"
+  fill="none" stroke="${STEM_DARK}" stroke-width="0.9" stroke-opacity=".55" stroke-linecap="round"/>
+<path d="M24 10 C30 3 38 2 43 5" fill="none" stroke="${STEM}" stroke-width="1.3" stroke-linecap="round"/>
+<path d="M104 9 C110 3 118 3 122 6" fill="none" stroke="${STEM}" stroke-width="1.3" stroke-linecap="round"/>
+${leaf(16, 12, -32, 1, LEAF_B)}
+${leaf(40, 24, 24, 0.9, LEAF_A)}
+${leaf(70, 30, 8, 0.85, LEAF_B)}
+${leaf(96, 12, -150, 0.95, LEAF_A)}
+${leaf(120, 10, -28, 0.9, LEAF_B)}
+${leaf(146, 27, 18, 0.85, LEAF_A)}
+${blossom(31, 8, 1.05, -12)}
+${blossom(60, 29, 0.8, 20)}
+${blossom(88, 21, 0.7, 0)}
+${blossom(113, 7, 1, 14)}
+${blossom(155, 24, 0.75, -8)}
+`;
+const svgUrl = (w, h, transform) => `data:image/svg+xml;utf8,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"><g transform="${transform}">${tileBody}</g></svg>`)}`;
+const H_TILE = svgUrl(160, 34, "");
+const H_TILE_FLIP = svgUrl(160, 34, "scale(1 -1) translate(0 -34)");
+const V_TILE = svgUrl(34, 160, "translate(34 0) rotate(90)");
+const V_TILE_FLIP = svgUrl(34, 160, "translate(34 0) scale(-1 1) translate(34 0) rotate(90)");
+/** A layered garden rose with leaves — used at the frame corners. */
+function RoseCluster({ size = 76, rotate = 0, className, }) {
+    return (React.createElement("svg", { className: className, width: size, height: size, viewBox: "0 0 100 100", "aria-hidden": "true", style: { transform: `rotate(${rotate}deg)` } },
+        React.createElement("path", { d: "M8 92 C22 74 34 66 52 58 C70 50 82 38 92 20", fill: "none", stroke: STEM, strokeWidth: "3", strokeLinecap: "round" }),
+        React.createElement("path", { d: "M18 84 C30 78 38 70 44 60", fill: "none", stroke: STEM, strokeWidth: "1.6", strokeLinecap: "round" }),
+        React.createElement("path", { d: "M0 0 C8 -10 22 -12 30 -5 C22 6 8 8 0 0 Z", fill: LEAF_A, stroke: STEM_DARK, strokeWidth: "0.8", strokeOpacity: ".4", transform: "translate(20 80) rotate(35)" }),
+        React.createElement("path", { d: "M0 0 C8 -10 22 -12 30 -5 C22 6 8 8 0 0 Z", fill: LEAF_B, stroke: STEM_DARK, strokeWidth: "0.8", strokeOpacity: ".4", transform: "translate(46 58) rotate(-140) scale(.9)" }),
+        React.createElement("path", { d: "M0 0 C8 -10 22 -12 30 -5 C22 6 8 8 0 0 Z", fill: LEAF_A, stroke: STEM_DARK, strokeWidth: "0.8", strokeOpacity: ".4", transform: "translate(74 36) rotate(20) scale(.85)" }),
+        React.createElement("g", { transform: "translate(64 26)" },
+            [0, 60, 120, 180, 240, 300].map((a) => (React.createElement("ellipse", { key: a, cx: "0", cy: "-13", rx: "8.5", ry: "13", fill: PETAL_A, transform: `rotate(${a})`, opacity: ".95" }))),
+            [30, 150, 270].map((a) => (React.createElement("ellipse", { key: a, cx: "0", cy: "-8", rx: "6.5", ry: "9", fill: PETAL_B, transform: `rotate(${a})` }))),
+            React.createElement("circle", { r: "5.5", fill: PETAL_C }),
+            React.createElement("circle", { r: "2.6", fill: CORE })),
+        React.createElement("g", { transform: "translate(30 62) scale(.62)" },
+            [0, 72, 144, 216, 288].map((a) => (React.createElement("ellipse", { key: a, cx: "0", cy: "-12", rx: "7", ry: "11", fill: a % 144 === 0 ? PETAL_B : PETAL_A, transform: `rotate(${a})` }))),
+            React.createElement("circle", { r: "3.4", fill: CORE }))));
+}
+/**
+ * Overlay that wraps the nearest positioned ancestor with the vine.
+ * `scale` shrinks the vine for small frames (photo cards, buttons).
+ */
+function VineFrame({ scale = 1 }) {
+    const band = Math.round(30 * scale);
+    const rose = Math.round(74 * scale);
+    const len = Math.round(150 * scale);
+    const edge = {
+        position: "absolute",
+        backgroundRepeat: "repeat-x",
+        backgroundSize: `${len}px ${band}px`,
+    };
+    const vEdge = {
+        position: "absolute",
+        backgroundRepeat: "repeat-y",
+        backgroundSize: `${band}px ${len}px`,
+    };
+    return (React.createElement("div", { className: "vine-layer", "aria-hidden": "true" },
+        React.createElement("span", { style: {
+                ...edge,
+                left: band,
+                right: band,
+                top: -band / 2,
+                height: band,
+                backgroundImage: `url("${H_TILE}")`,
+            } }),
+        React.createElement("span", { style: {
+                ...edge,
+                left: band,
+                right: band,
+                bottom: -band / 2,
+                height: band,
+                backgroundImage: `url("${H_TILE_FLIP}")`,
+            } }),
+        React.createElement("span", { style: {
+                ...vEdge,
+                top: band,
+                bottom: band,
+                left: -band / 2,
+                width: band,
+                backgroundImage: `url("${V_TILE}")`,
+            } }),
+        React.createElement("span", { style: {
+                ...vEdge,
+                top: band,
+                bottom: band,
+                right: -band / 2,
+                width: band,
+                backgroundImage: `url("${V_TILE_FLIP}")`,
+            } }),
+        React.createElement(RoseCluster, { className: "vine-rose vine-rose--tl", size: rose, rotate: 0 }),
+        React.createElement(RoseCluster, { className: "vine-rose vine-rose--tr", size: rose, rotate: 90 }),
+        React.createElement(RoseCluster, { className: "vine-rose vine-rose--br", size: rose, rotate: 180 }),
+        React.createElement(RoseCluster, { className: "vine-rose vine-rose--bl", size: rose, rotate: 270 })));
+}
+const sadSelfie = "assets/sad-selfie.jpeg";
+const photo1 = "assets/photo-1.png";
+const photo2 = "assets/photo-2.jpeg";
+const photo3 = "assets/photo-3.jpeg";
+const photo4 = "assets/photo-4.jpeg";
+const photo5 = "assets/photo-5.jpeg";
+const photo6 = "assets/photo-6.jpeg";
+const photo7 = "assets/photo-7.jpeg";
+const hugsPhoto = "assets/IMG_9397.jpeg";
+const attentionPhoto = "assets/IMG_9407.jpeg";
+const tiredPhoto = "assets/IMG_9413.jpeg";
+const angryPhoto = "assets/IMG_9417.jpeg";
+const lovePhoto = "assets/IMG_9424.jpeg";
+const photos = [
+    { src: photo1, caption: "Смотря на это фото, я думаю о том, какая ты у меня была маленькая, беззащитная (ты и сейчас такая), но тут это особенно видно в твоих глазах." },
+    { src: photo2, caption: "Смотря на это фото, я думаю о том, какая ты маленькая дурочка, и учитывая то, что ты — маленькая дурочка, хочется прощать тебе все погрешности." },
+    { src: photo3, caption: "Хахахахаахаха, смотря на это фото, я думаю о том, какая ты у меня домашняя и умиляюсь твоим модным фоткам)" },
+    { src: photo4, caption: "Смотря на это фото, я восхищаюсь твоей естественной красотой." },
+    { src: photo5, caption: "Смотря на это фото, я восхищаюсь твоей идеальной фигурой... У тебя она просто огонь." },
+    { src: photo6, caption: "Без комментариев...) пхахахахахах" },
+    { src: photo7, caption: "Смотря на это фото, я думаю о твоём уставшем капризном характере)" },
+];
+const moods = [
+    { t: "😔 Если вдруг тебе грустно", img: sadSelfie, x: `Не расстраивайся, пожалуйста, принцесска 🥺\n\nВидишь, какой я тоже печальный и стрёмный, когда ты печалишься? Ты чтооо??? Хочешь, чтоб у меня появились морщинки от грусти?(\n\nЧто бы тебя ни расстраивало, знай: я всегда буду за тебя. ВСЕГДА!\n\nПотому что ты — часть меня. Что бы ни случилось, я тебя не то что поддержу, а вместо тебя буду стоять лицом к тем проблемам, которые хотят тебя коснуться.` },
+    { t: "🫂 Если вдруг тебе хочется обнимашек", img: hugsPhoto, x: "Хочешь обняться? Обнимись с нами... 🤭" },
+    { t: "🥺 Если вдруг тебе хочется внимания", img: attentionPhoto, x: `Ути моя принцесска, тебе что??? Стало одиноко, что ли?) Некому вынести мозг?)))\n\nЧто бы я щас ни делал, моё сердце и моя душа всегда с тобой, я скоро вернусь к тебе) ❤️` },
+    { t: "😴 Если вдруг устала", img: tiredPhoto, x: `Уффф, моя радость устала и теперь она как выжатый лимон, ахахахахаха)\n\nНу ладно, на тебя может навалиться много работы, но я правда всегда удивляюсь тому, как тебе хватает на всё нервов. Несмотря на усталость, ты доделываешь любую работу! ЛЮБЛЮ ТЕБЯ ❤️` },
+    { t: "😡 Если вдруг злишься", img: angryPhoto, x: `Эй, а ну не злись, а то она тоже злится, кхахпхпзпзпзпзазаха\n\nНу маленькая, в мире иногда день, иногда ночь. Сейчас злишься, скоро забудешь, потом радость — это всё переменчиво. Не нужно, пожалуйста, так злиться 🥺` },
+    { t: "❤️ Если вдруг ты забыла, как сильно я тебя люблю", img: lovePhoto, x: `Всевышний, спасибо тебе большое за то, какую жену ты для меня создал ❤️\n\nМаленькая, я тебя люблю сильно-сильно, ооочень сильно. Я хочу быть с тобой всегда, везде.\n\nЯ хочу, чтоб ты меня дразнила, любила, смеялась с меня, хочу всегда приносить тебе улыбку и радость. С тобой я делаю те дела, которые я бы никогда не сделал, как минимум из-за лени. Без тебя бы я не был таким, какой я есть. Спасибо тебе за то, что всегда тянешь меня только в хороший путь. Спасибо, и я тебя очень сильно люблю. ❤️` },
+];
+const lead = `Я хочу поздравить тебя, с твоим 20-м днём рождения ❤️
+
+Я и всё моё окружение не так внимательно к дням рождениям и у всех это обычное дело, но когда речь заходит о твоём дне рождения, я буквально в этом году, за пару дней до твоего дня рождения начал понимать, что у тебя это — Вообще не так!
+
+Твой день рождения — это огромный праздник для тебя и для всех твоих близких, это очень важный день, к которому все тщательно готовятся, впредь и я.
+
+Мы столько времени уже вместе, и я тебя ни разу в жизни не видел, к сожалению, но я уверен, что даже при первой нашей встрече, я готов буду без раздумий согласиться на то, чтоб жениться на тебе. Я хочу всегда быть рядом с тобой, где бы ты ни была. Я хочу принимать на себя любые твои обиды и негодования, я хочу разделить с тобой любую твою радость и счастье. Я хочу, чтоб ты всегда была со мной, чтоб о всякой твоей красоте, о всякой твоей одежде и всего остального заботился только я. Я очень сильно тебя люблю, как бы я не теряя голову не говорил тебе чего-то обидного. Я часто туплю, часто не сдерживаюсь, но я никогда не перестаю тебя любить хоть на 0,00000000....1% меньше, чем всегда.`;
+function FlyingButterfly({ index, source, target }) {
+    const style = {
+        "--start-x": `${source.x}px`,
+        "--start-y": `${source.y}px`,
+        "--end-x": `${target.x}px`,
+        "--end-y": `${target.y}px`,
+        "--turn": `${target.turn}deg`,
+        "--size": target.size,
+        "--delay": `${index * 42}ms`,
+    };
+    return (React.createElement("span", { className: `butterfly butterfly--${index + 1}`, style: style },
+        React.createElement("span", { className: "butterfly-body" },
+            React.createElement("span", { className: "butterfly-antenna butterfly-antenna--left" }),
+            React.createElement("span", { className: "butterfly-antenna butterfly-antenna--right" }),
+            React.createElement("span", { className: "butterfly-wing butterfly-wing--left" },
+                React.createElement("span", { className: "butterfly-spot butterfly-spot--upper" }),
+                React.createElement("span", { className: "butterfly-spot butterfly-spot--lower" })),
+            React.createElement("span", { className: "butterfly-wing butterfly-wing--right" },
+                React.createElement("span", { className: "butterfly-spot butterfly-spot--upper" }),
+                React.createElement("span", { className: "butterfly-spot butterfly-spot--lower" })),
+            React.createElement("span", { className: "butterfly-thorax" }))));
+}
+function FloatingPinkBird({ onClick }) {
+    const [flight, setFlight] = useState({ x: 32, y: 150, facing: 1, duration: 6200, tilt: 0 });
+    const lastX = useRef(32);
+    const lastY = useRef(150);
+    useEffect(() => {
+        let timer;
+        const move = () => {
+            const edge = window.innerWidth < 680 ? 24 : 50;
+            const minY = window.innerWidth < 680 ? 100 : 80;
+            const pageHeight = Math.max(document.documentElement.scrollHeight, document.body ? document.body.scrollHeight : 0, window.innerHeight);
+            const maxX = Math.max(edge, window.innerWidth - edge - 72);
+            const maxY = Math.max(minY, pageHeight - 110);
+            const x = edge + Math.random() * (maxX - edge);
+            const y = minY + Math.random() * (maxY - minY);
+            const duration = 4600 + Math.random() * 3600;
+            const facing = x >= lastX.current ? 1 : -1;
+            const tilt = Math.max(-16, Math.min(16, (y - lastY.current) / 18)) * facing;
+            lastX.current = x;
+            lastY.current = y;
+            setFlight({ x, y, facing, duration, tilt });
+            timer = window.setTimeout(move, duration + 180);
+        };
+        timer = window.setTimeout(move, 120);
+        return () => window.clearTimeout(timer);
+    }, []);
+    return (React.createElement("button", { className: "floating-pink-bird", type: "button", onPointerDown: (event) => {
+            event.preventDefault();
+            onClick();
+        }, onClick: (event) => {
+            if (event.detail === 0)
+                onClick();
+        }, "aria-label": "Открыть секретную записку", style: {
+            "--bird-x": `${flight.x}px`, "--bird-y": `${flight.y}px`,
+            "--bird-facing": flight.facing, "--bird-duration": `${flight.duration}ms`,
+            "--bird-tilt": `${flight.tilt}deg`,
+        } },
+        React.createElement("span", { className: "floating-pink-bird-bob" },
+        React.createElement("svg", { className: "floating-pink-bird-inner", viewBox: "0 0 64 52", role: "presentation" },
+            React.createElement("path", { className: "floating-pink-bird-tail", d: "M18 31 3 38l12 3-7 8 22-9Z", fill: "#d95a91" }),
+            React.createElement("ellipse", { cx: "34", cy: "31", rx: "20", ry: "14", fill: "#ec79a8" }),
+            React.createElement("circle", { cx: "48", cy: "22", r: "10", fill: "#f28eb5" }),
+            React.createElement("path", { className: "floating-pink-bird-wing", d: "M36 31C25 23 20 11 27 5c10 6 17 16 17 27-3 3-5 3-8-1Z", fill: "#f7b1cc" }),
+            React.createElement("path", { d: "m56 22 8 4-8 4Z", fill: "#f2b85b" }),
+            React.createElement("circle", { cx: "51", cy: "19", r: "1.8", fill: "#6d2949" }),
+            React.createElement("circle", { cx: "50.4", cy: "18.4", r: ".55", fill: "#fff7fb" }),
+            React.createElement("path", { d: "M45 12c3-5 7-5 9-1", fill: "none", stroke: "#d95a91", strokeWidth: "2", strokeLinecap: "round" })))));
+}
+const birthdayNote = "Принцесска, как я уже и говорил, из за сложившейся ситуации с деньгами, я не смог пока подарить тебе то, что хотел. Но скоро уже все будет нормально, и я сделаю тебе основной подарок. С ДНЕМ РОЖДЕНИЯ ❤️";
+const fireworkSparks = [
+    [14, 24, -70, -78, "#ff4d9b", "0s"], [14, 24, -26, -98, "#ffd84f", ".05s"], [14, 24, 34, -88, "#66e4ff", ".1s"], [14, 24, 72, -42, "#aaff72", ".15s"],
+    [86, 25, -72, -56, "#ff874f", ".2s"], [86, 25, -28, -100, "#f5e65f", ".25s"], [86, 25, 35, -92, "#ff63cd", ".3s"], [86, 25, 78, -35, "#72ddff", ".35s"],
+    [18, 77, -76, -35, "#ffd34f", ".4s"], [18, 77, -40, 44, "#ff5aa2", ".45s"], [18, 77, 24, 65, "#75e6b2", ".5s"], [18, 77, 67, 28, "#9da3ff", ".55s"],
+    [83, 75, -70, 20, "#ff72bd", ".6s"], [83, 75, -27, 64, "#ffd95c", ".65s"], [83, 75, 38, 57, "#6de8ff", ".7s"], [83, 75, 76, -8, "#a9f76b", ".75s"],
+];
+function Index() {
+    const [view, setView] = useState("home");
+    const [open, setOpen] = useState(null);
+    const [flight, setFlight] = useState(null);
+    const [targets, setTargets] = useState([]);
+    const [noteOpen, setNoteOpen] = useState(false);
+    const closeTimer = useRef(null);
+    const modalCard = useRef(null);
+    const [secret, setSecret] = useState("hidden");
+    const secretTimer = useRef(null);
+    const showSecret = () => {
+        if (secretTimer.current)
+            clearTimeout(secretTimer.current);
+        setSecret("in");
+        secretTimer.current = setTimeout(() => setSecret("out"), 3000);
+    };
+    const openRubric = (next) => {
+        setOpen(null);
+        setFlight(null);
+        setTargets([]);
+        setView(next);
+        window.scrollTo({ top: 0, behavior: "auto" });
+    };
+    const closeRubric = () => {
+        setView("home");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+    const openMood = (event, mood) => {
+        if (closeTimer.current)
+            clearTimeout(closeTimer.current);
+        const bounds = event.currentTarget.getBoundingClientRect();
+        const origin = {
+            x: bounds.left + bounds.width / 2,
+            y: bounds.top + bounds.height / 2,
+        };
+        setFlight({
+            origin,
+            source: origin,
+            phase: "arriving",
+        });
+        setTargets([]);
+        setOpen(mood);
+    };
+    const closeMood = () => {
+        if (!flight || flight.phase === "leaving")
+            return;
+        setFlight({ ...flight, phase: "leaving" });
+        closeTimer.current = setTimeout(() => {
+            setOpen(null);
+            setFlight(null);
+            setTargets([]);
+        }, 1480);
+    };
+    useLayoutEffect(() => {
+        if (open === null || !modalCard.current)
+            return;
+        const placeButterflies = () => {
+            const rect = modalCard.current?.getBoundingClientRect();
+            if (!rect)
+                return;
+            const vineOffset = 15;
+            const points = [
+                [0.12, 0, -18, 0.82], [0.36, 0, 13, 0.68], [0.72, 0, -10, 0.92],
+                [1, 0.2, 76, 0.72], [1, 0.5, 99, 0.86], [1, 0.8, 111, 0.64],
+                [0.76, 1, 169, 0.78], [0.36, 1, 190, 0.67],
+                [0, 0.7, -105, 0.88], [0, 0.3, -78, 0.6],
+            ];
+            setTargets(points.map(([px, py, turn, size]) => {
+                const x = px === 0 ? -vineOffset : px === 1 ? rect.width + vineOffset : px * rect.width;
+                const y = py === 0 ? -vineOffset : py === 1 ? rect.height + vineOffset : py * rect.height;
+                return { x, y, turn, size };
+            }));
+            setFlight((current) => current ? {
+                ...current,
+                source: {
+                    x: current.origin.x - rect.left,
+                    y: current.origin.y - rect.top,
+                },
+            } : null);
+        };
+        placeButterflies();
+        window.addEventListener("resize", placeButterflies);
+        return () => window.removeEventListener("resize", placeButterflies);
+    }, [open]);
+    useEffect(() => {
+        if (flight?.phase !== "arriving" || targets.length === 0)
+            return;
+        const timer = setTimeout(() => setFlight((current) => current ? { ...current, phase: "resting" } : null), 1700);
+        return () => clearTimeout(timer);
+    }, [flight?.phase, targets.length]);
+    useEffect(() => {
+        if (open === null && !noteOpen)
+            return;
+        const prev = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
+        const onKey = (e) => {
+            if (e.key === "Escape") {
+                if (noteOpen) setNoteOpen(false);
+                else closeMood();
+            }
+        };
+        window.addEventListener("keydown", onKey);
+        return () => {
+            document.body.style.overflow = prev;
+            window.removeEventListener("keydown", onKey);
+        };
+    }, [open, flight, noteOpen]);
+    useEffect(() => () => {
+        if (closeTimer.current)
+            clearTimeout(closeTimer.current);
+        if (secretTimer.current)
+            clearTimeout(secretTimer.current);
+    }, []);
+    useEffect(() => {
+        if (secret === "out") {
+            const t = setTimeout(() => setSecret("hidden"), 900);
+            return () => clearTimeout(t);
+        }
+    }, [secret]);
+    const active = open === null ? null : moods[open];
+    const CloseCross = () => (React.createElement("span", { className: "rubric-close-cross", "aria-hidden": "true" }));
+    return (React.createElement("div", { className: "card-page" },
+        React.createElement("div", { className: "wrap" },
+            view === "home" && (React.createElement(React.Fragment, null,
+                React.createElement(FloatingPinkBird, { onClick: () => setNoteOpen(true) }),
+                React.createElement("div", { className: "box" },
+                    React.createElement(VineFrame, null),
+                    React.createElement("h1", null, "\u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u044E \u0442\u0435\u0431\u044F \u0441 \u0434\u043D\u0451\u043C \u0440\u043E\u0436\u0434\u0435\u043D\u0438\u044F, \u043C\u043E\u044F \u043B\u044E\u0431\u0438\u043C\u0430\u044F \u043F\u0440\u0438\u043D\u0446\u0435\u0441\u0441\u043A\u0430 \u2764\uFE0F"),
+                    React.createElement("div", { className: "lead" }, lead)),
+                React.createElement("nav", { className: "rubric-nav", "aria-label": "\u0420\u0430\u0437\u0434\u0435\u043B\u044B \u043E\u0442\u043A\u0440\u044B\u0442\u043A\u0438" },
+                    React.createElement("button", { className: "rubric-btn", type: "button", onClick: () => openRubric("photos") },
+                        React.createElement(VineFrame, { scale: 0.6 }),
+                        React.createElement("span", { className: "rubric-btn-label" }, "\u0427\u0442\u043E \u044F \u0434\u0443\u043C\u0430\u044E \u043E \u0442\u0432\u043E\u0438\u0445 \u0444\u043E\u0442\u043E\u0433\u0440\u0430\u0444\u0438\u044F\u0445? \uD83D\uDCF8")),
+                    React.createElement("button", { className: "rubric-btn", type: "button", onClick: () => openRubric("moods") },
+                        React.createElement(VineFrame, { scale: 0.6 }),
+                        React.createElement("span", { className: "rubric-btn-label" }, "\u0415\u0441\u043B\u0438 \u0432\u0434\u0440\u0443\u0433.. \uD83D\uDC9D")),
+                    React.createElement("button", { className: "rubric-btn", type: "button", onClick: showSecret },
+                        React.createElement(VineFrame, { scale: 0.6 }),
+                        React.createElement("span", { className: "rubric-btn-label" }, "\u041C\u0430\u043B\u0435\u043D\u044C\u043A\u0438\u0439 \u0441\u0435\u043A\u0440\u0435\u0442 \u0441\u0430\u0439\u0442\u0430 \uD83D\uDD24"))),
+                React.createElement("footer", null))),
+            view === "photos" && (React.createElement("div", { className: "rubric" },
+                React.createElement("div", { className: "rubric-topbar" },
+                    React.createElement("button", { className: "rubric-close", type: "button", "aria-label": "\u0417\u0430\u043A\u0440\u044B\u0442\u044C \u0438 \u0432\u0435\u0440\u043D\u0443\u0442\u044C\u0441\u044F \u043D\u0430 \u0433\u043B\u0430\u0432\u043D\u0443\u044E", onClick: closeRubric },
+                        React.createElement(CloseCross, null))),
+                React.createElement("h2", { className: "title" }, "\u0427\u0442\u043E \u044F \u0434\u0443\u043C\u0430\u044E \u043E \u0442\u0432\u043E\u0438\u0445 \u0444\u043E\u0442\u043E\u0433\u0440\u0430\u0444\u0438\u044F\u0445? \u2764\uFE0F"),
+                React.createElement("div", { className: "photos" }, photos.map((photo, i) => (React.createElement("div", { className: "card", key: i },
+                    React.createElement(VineFrame, { scale: 0.68 }),
+                    React.createElement("img", { className: "photo", src: photo.src, alt: `Фотография ${i + 1}` }),
+                    React.createElement("div", { className: "caption" }, photo.caption))))),
+                React.createElement("footer", null))),
+            view === "moods" && (React.createElement("div", { className: "rubric" },
+                React.createElement("div", { className: "rubric-topbar" },
+                    React.createElement("button", { className: "rubric-close", type: "button", "aria-label": "\u0417\u0430\u043A\u0440\u044B\u0442\u044C \u0438 \u0432\u0435\u0440\u043D\u0443\u0442\u044C\u0441\u044F \u043D\u0430 \u0433\u043B\u0430\u0432\u043D\u0443\u044E", onClick: closeRubric },
+                        React.createElement(CloseCross, null))),
+                React.createElement("h2", { className: "title" }, "\u0415\u0441\u043B\u0438 \u0432\u0434\u0440\u0443\u0433..."),
+                React.createElement("div", { className: "box" },
+                    React.createElement(VineFrame, null),
+                    React.createElement("div", { className: "intro" }, "\u0414\u0430, \u044F \u0434\u0430\u043B\u0435\u043A\u043E \u043E\u0442 \u0442\u0435\u0431\u044F, \u043D\u043E \u0445\u043E\u0447\u0443, \u0447\u0442\u043E\u0431 \u0445\u043E\u0442\u044F \u0431\u044B \u0442\u0430\u043A, \u0432 \u0441\u0430\u043C\u044B\u0435 \u0431\u0430\u043D\u0430\u043B\u044C\u043D\u044B\u0435 \u0442\u0432\u043E\u0438 \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u044F, \u044F \u0445\u043E\u0442\u044F \u0431\u044B \u043A\u0430\u043A-\u0442\u043E \u0431\u044B\u043B \u0440\u044F\u0434\u043E\u043C \uD83D\uDE0A"),
+                    React.createElement("div", { className: "moods" }, moods.map((m, i) => (React.createElement("button", { className: "mood", key: m.t, onClick: (event) => openMood(event, i), type: "button" },
+                        React.createElement(VineFrame, { scale: 0.55 }),
+                        React.createElement("span", { className: "mood-label" }, m.t)))))),
+                React.createElement("footer", null)))),
+        noteOpen && (React.createElement("div", { className: "bird-note-modal", role: "dialog", "aria-modal": "true", "aria-labelledby": "bird-note-title", onClick: () => setNoteOpen(false) },
+            React.createElement("div", { className: "bird-note-card", onClick: (e) => e.stopPropagation() },
+                React.createElement(VineFrame, null),
+                React.createElement("div", { className: "fireworks", "aria-hidden": "true" }, fireworkSparks.map((spark, i) => React.createElement("span", { className: "firework", key: i, style: { "--fx": `${spark[0]}%`, "--fy": `${spark[1]}%`, "--tx": `${spark[2]}px`, "--ty": `${spark[3]}px`, "--fc": spark[4], "--fd": spark[5] } }))),
+                React.createElement("button", { className: "bird-note-close", type: "button", onClick: () => setNoteOpen(false), "aria-label": "Закрыть записку" }, "×"),
+                React.createElement("h2", { className: "bird-note-title", id: "bird-note-title" }, "Для моей принцесски ❤️"),
+                React.createElement("p", { className: "bird-note-text" }, birthdayNote)))),
+        secret !== "hidden" && (React.createElement("div", { className: "secret-overlay" + (secret === "out" ? " secret-overlay--out" : "") }, React.createElement("div", { className: "secret-text" }, "\u041F\u043E\u0439\u043C\u0430\u0439 \u043F\u0442\u0438\u0447\u043A\u0443...)"))),
+        active && (React.createElement("div", { className: `modal open ${flight?.phase === "leaving" ? "modal--closing" : ""}`, onClick: closeMood },
+            React.createElement("div", { className: "mcard", ref: modalCard, onClick: (e) => e.stopPropagation() },
+                React.createElement(VineFrame, null),
+                flight && targets.length === 10 && (React.createElement("div", { className: `butterfly-flight butterfly-flight--${flight.phase}`, "aria-hidden": "true" }, targets.map((target, i) => (React.createElement(FlyingButterfly, { index: i, source: flight.source, target: target, key: i }))))),
+                React.createElement("button", { className: "close", onClick: closeMood, type: "button", "aria-label": "\u0417\u0430\u043A\u0440\u044B\u0442\u044C" }, "\u00D7"),
+                React.createElement("div", { className: "mtitle" }, active.t),
+                active.img && (React.createElement("img", { className: "mphoto", src: active.img, alt: `Фотография: ${active.t}` })),
+                React.createElement("div", { className: "mtext" }, active.x))))));
+}
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(React.createElement(Index));
+
+</script>
+</body>
+</html>
